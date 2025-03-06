@@ -21,7 +21,7 @@ def enviar_email(ativo, preco_acao, preco_limite, ultima_verificacao):
         return ultima_verificacao
 
     # Verifica se já passou 5 minutos desde o último envio de e-mail
-    if ultima_verificacao and datetime.now() < ultima_verificacao + timedelta(minutes=1):
+    if ultima_verificacao and datetime.now() < ultima_verificacao + timedelta(minutes=5):
         print(f"\033[93mO e-mail já foi enviado para {ativo} nos últimos 5 minutos. Aguardando próxima verificação.\033[0m")
         return ultima_verificacao
 
